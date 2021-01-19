@@ -1,0 +1,140 @@
+  .div.ex2 {
+    max-width: 500px;
+    margin: auto;
+    border: 3px solid #73AD21;
+    width: 25%;
+  }
+
+  .App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+
+  .alignleft {
+    float: left;
+  }
+  
+  .aligncenter {
+    float: center;
+  }
+
+  .alignright {
+    float: right;
+  }
+
+  .buttons {
+    top: 0px;
+    right: 0px;
+  }
+  
+  .caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid \9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+  }
+  
+  .dropup .caret, .navbar-fixed-bottom .dropdown .caret {
+    border-top: 0;
+    border-bottom: 4px dashed;
+    border-bottom: 4px solid \9;
+    content: "";
+  }
+  
+  table thead .caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid \9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+   }
+   
+   table thead .dropup .caret,
+   table thead .navbar-fixed-bottom .dropdown .caret {
+    border-top: 0;
+    border-bottom: 4px dashed;
+    border-bottom: 4px solid \9;
+    content: "";
+   }
+   
+   .react-bootstrap-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch
+    }
+
+   .react-bootstrap-table table {
+    table-layout: auto !important
+    }
+
+   .table th,
+   .table td {
+    white-space: nowrap
+  }
+  
+  .form-inline {
+    width: 100%;
+  }
+  
+  .form-group {
+    width: 90%;
+  }
+  
+  .input-group {
+    width: 90% !important;
+  }
+  
+  span.input-group-addon {
+    width: 50px !important;
+  }
+  
+  .form-control {
+    width: 50%;
+    border: 1px solid #ccc;
+    padding: 10px; 
+  }
+  
+  .control-error {
+    border: 1px solid red;
+  }
+
+#nav-dropdown{
+    color: black;
+    font-weight: bold;
+    background-color: green;
+    margin: 10 10 10em 10;
+    padding: 8px 15px;
+}
+
+.navItem {
+  color: black;
+}
+
+.img-container {
+  text-align: center;
+  display: block;
+}
+
+.slick-slide.slick-center img {
+  margin-left: auto; 
+  margin-right: auto;
+  transform: scale(1.1);
+}
+
+.slick-prev, .slick-next {
+  font-size: 15px !important;
+}
+
+ .slick-prev:before, .slick-next:before  {
+  content: '' !important;
+}
