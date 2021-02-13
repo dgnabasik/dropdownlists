@@ -347,12 +347,11 @@ v
 
             <Col md='auto' >
               <div style={{width: '300px'}}>
-                <Select 
-                options = {this.state.categoryLookup} 
-                placeholder='Category description'
+              <Select 
+                options = {['test1', 'test2']} 
+                placeholder={'Category description'}
                 onChange={(e) => this.onDescriptionChange(e)}
-                value={this.state.selectedCategory}
-                />
+              />
               </div>
             </Col>
 
