@@ -130,11 +130,24 @@
   margin-right: auto;
   transform: scale(1.1);
 }
-
+ 
 .slick-prev, .slick-next {
   font-size: 15px !important;
 }
 
  .slick-prev:before, .slick-next:before  {
   content: '' !important;
+}
+
+@media (min-width:992px) {    
+  .vertical-nav {
+      position: fixed;
+      top: 56px;
+      left: 0;
+      width: 200px;
+      height: 100%;
+      background-color: #f8f8f8;
+      overflow-y: auto;
+      padding-top: 30px
+    }
 }
