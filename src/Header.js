@@ -9,7 +9,6 @@ import { Navbar, Col } from 'react-bootstrap';
 import axios from 'axios';
 import BootstrapTable from 'react-bootstrap-table-next';
 import paginationFactory from 'react-bootstrap-table2-paginator';
-import Autosuggest from 'react-bootstrap-autosuggest';
 import './styles/filedrop.css';
 import { components, createFilter } from 'react-windowed-select';
 import WindowedSelect from 'react-windowed-select';
@@ -348,10 +347,11 @@ v
 
             <Col md='auto' >
               <div style={{width: '300px'}}>
-                <Autosuggest
-                  datalist={['test1', 'test2']}
-                  placeholder='Category description'
-                  onChange={this.onDescriptionChange}
+                <Select 
+                options = {this.state.categoryLookup} 
+                placeholder='Category description'
+                onChange={(e) => this.onDescriptionChange(e)}
+                value={this.state.selectedCategory}
                 />
               </div>
             </Col>
