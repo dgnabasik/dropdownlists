@@ -118,7 +118,7 @@ class Header extends React.Component {
       dataList:[],          
       categoryId: 0,
       categoryLookup:[],    // []LookupMap {value:, label: } 
-      wordList:[],          // []LookupMap {value:, label: } 
+      wordMap:[],          // []LookupMap {value:, label: } 
       specialCategory:[],   // LookupMap {value:, label: } from [category].
       selectedCategory: defaultCategory,
       statusMessage: 'Files can be dropped from the directory: ' + SourceFileDirectory,
@@ -138,7 +138,7 @@ class Header extends React.Component {
     this.onCreateClick = this.onCreateClick.bind(this);
     this.onDescriptionChange = this.onDescriptionChange.bind(this);
     this.fetchCategoryListAsync = this.fetchCategoryListAsync.bind(this);
-    this.fetchWordListAsync = this.fetchWordListAsync.bind(this);
+    this.fetchCategoryWordListAsync = this.fetchCategoryWordListAsync.bind(this);
     this.fetchFileListAsync = this.fetchFileListAsync.bind(this);
     this.FileDropBox = this.FileDropBox.bind(this);
     this.populateDataList = this.populateDataList.bind(this);
@@ -211,7 +211,7 @@ v
         }
     });
     if (categorySelected.value !== this.state.categoryId) {
-      this.fetchWordList(categorySelected.value).then( () => this.handleWordList() ); 
+      this.fetchCategoryWordList(categorySelected.value).then( () => this.handleWordList() ); 
     }
   }
 
@@ -269,7 +269,7 @@ v
   fetchFileList = this.fetchFileListAsync;
 
   // Returns rows of filtered [special]. 
-  async fetchWordListAsync(categoryId) {
+  async fetchCategoryWordListAsync(categoryId) {
     const url = ApiURl() + '/list/' + categoryId;  
     try { 
       this.setState({isFetching: true});
@@ -278,10 +278,10 @@ v
       this.setState({wordMap: LookupMap, isFetching: false });
     } catch(err) {
       this.setState({isFetching: false});
-      ProcessError(err, 'Header.fetchWordListAsync:');
+      ProcessError(err, 'Header.fetchCategoryWordListAsync:');
     }
   }
-  fetchWordList = this.fetchWordListAsync;
+  fetchCategoryWordList = this.fetchCategoryWordListAsync;
 
   // Returns entire contents of [wordcategory]. 
   async fetchCategoryListAsync() {
@@ -307,7 +307,7 @@ v
 
   render() {
     // eslint-disable-next-line
-    const { isFetching, categoryId, categoryLookup, wordList, specialCategory, selectedCategory, statusMessage, selectedFileName, description, invalidChars,
+    const { isFetching, categoryId, categoryLookup, wordMap, specialCategory, selectedCategory, statusMessage, selectedFileName, description, invalidChars,
     } = this.state;
 
     return (
